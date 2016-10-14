@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Legion" Class="LegionLinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=dh3009\web_dev;Initial Catalog=Legion;Integrated Security=True" SettingsObjectName="Watcher.Properties.Settings" SettingsPropertyName="LegionConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.xspSetAssemblyRefreshFlags" Method="xspSetAssemblyRefreshFlags">
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

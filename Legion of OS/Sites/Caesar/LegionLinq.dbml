@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dev-Legion" Class="LegionLinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=dh1404\web_dev;Initial Catalog=dev-Legion;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="dev_LegionConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.xspCheckApplicationKeyForCollision" Method="xspCheckApplicationKeyForCollision">
+    <Parameter Name="appKey" Type="System.String" DbType="Char(36)" />
+    <Parameter Name="tfCollision" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <ElementType Name="xspCheckApplicationKeyForCollisionResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.xspDeleteApplication" Method="xspDeleteApplication">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="resultcode" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xspDeleteService" Method="xspDeleteService">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="resultcode" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xspDeleteServiceMethod" Method="xspDeleteServiceMethod">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="resultcode" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xspSetSettingByKey" Method="xspSetSettingByKey">
+    <Parameter Name="key" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="value" Type="System.String" DbType="VarChar(1000)" />
+    <ElementType Name="xspSetSettingByKeyResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.xspGetSettingById" Method="xspGetSettingById">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="value" Type="System.String" DbType="VarChar(1000)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xspGetSettingByKey" Method="xspGetSettingByKey">
+    <Parameter Name="key" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="value" Type="System.String" DbType="VarChar(1000)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xspSetSettingById" Method="xspSetSettingById">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="key" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="value" Type="System.String" DbType="VarChar(1000)" />
+    <ElementType Name="xspSetSettingByIdResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.xspDeleteAllApplciationPermissions" Method="xspDeleteAllApplciationPermissions">
+    <Parameter Name="applicationId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xspAddApplicationPermission" Method="xspAddApplicationPermission">
+    <Parameter Name="applicationId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="methodId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xspGetApplicationPermissions" Method="xspGetApplicationPermissions">
+    <Parameter Name="applicationId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="xspGetApplicationPermissionsResult">
+      <Column Name="MethodId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.xspDeleteServiceSetting" Method="xspDeleteServiceSetting">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="serviceid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="resultcode" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xspUpdateServiceSetting" Method="xspUpdateServiceSetting">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="serviceid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="value" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="tfEncrypted" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="resultcode" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xspGetServiceSettings" Method="xspGetServiceSettings">
+    <Parameter Name="servicekey" Type="System.String" DbType="Char(36)" />
+    <Parameter Name="serviceid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="resultcode" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <ElementType Name="xspGetServiceSettingsResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="IsEncrypted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.xspSetCacheRefreshFlags" Method="xspSetCacheRefreshFlags">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xspGetServerStatus" Method="xspGetServerStatus">
+    <ElementType Name="xspGetServerStatusResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IPAddress" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="HostName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsAssemblyRefreshRequired" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsCacheRefreshRequired" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.xspGetApplicationList" Method="xspGetApplicationList">
+    <ElementType Name="xspGetApplicationListResult">
+      <Column Name="ApplicationId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ApplicationName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ApplicationKey" Type="System.String" DbType="Char(36)" CanBeNull="true" />
+      <Column Name="ConsumerIPRange" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="IsPublic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsLogged" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.xspGetMethods" Method="xspGetMethods">
+    <ElementType Name="xspGetMethodsResult">
+      <Column Name="MethodId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MethodKey" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceKey" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MethodName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsMissing" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsRestricted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsPublic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsLogged" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.xspGetServiceMethods" Method="xspGetServiceMethods">
+    <Parameter Name="serviceId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="xspGetServiceMethodsResult">
+      <Column Name="MethodId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MethodKey" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceKey" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MethodName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsPublic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsRestricted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsLogged" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.xspGetServices" Method="xspGetServices">
+    <ElementType Name="xspGetServicesResult">
+      <Column Name="ServiceId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceKey" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AssemblyName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ClassName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ConsumerIPRange" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="IsRestricted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsPublic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsLogged" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.xspUpdateApplication" Method="xspUpdateApplication">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="applicationName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="applicationKey" Type="System.String" DbType="Char(36)" />
+    <Parameter Name="consumeriprange" Type="System.String" DbType="VarChar(31)" />
+    <Parameter Name="description" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="public" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="logged" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="resultcode" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xspUpdateService" Method="xspUpdateService">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="serviceKey" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="serviceDescription" Type="System.String" DbType="Char(36)" />
+    <Parameter Name="serviceIPRange" Type="System.String" DbType="VarChar(31)" />
+    <Parameter Name="serviceAssembly" Type="System.String" DbType="VarChar(31)" />
+    <Parameter Name="serviceClass" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="restricted" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="public" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="logged" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="resultcode" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xspUpdateServiceMethod" Method="xspUpdateServiceMethod">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="serviceid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="methodkey" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="methodname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="restricted" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="public" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="logged" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="resultcode" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

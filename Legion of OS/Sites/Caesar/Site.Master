@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Caesar.SiteMaster" ClientIDMode = "Static" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head runat="server">
+        <title>Legion Service Manager</title>
+        <script type="text/javascript" src="/global/scripts/js/jquery/library/1.7.0/jquery.min.js"></script>
+        <script type="text/javascript" src="/global/scripts/js/jquery/plugins/blockui/2.39/jquery.blockUI.js"></script>
+        <script type="text/javascript" src="/global/scripts/js/jquery/plugins/validate/1.8.1/jquery.validate.min.js"></script>
+
+        <link rel="stylesheet" href="/global/frameworks/bootstrap/2.1.1/css/bootstrap-noicons.min.css"></link>
+        <link rel="stylesheet" href="/global/frameworks/fontawesome/2.0/css/font-awesome.css"></link>
+        <script type="text/javascript" src="/global/frameworks/bootstrap/2.1.1/js/bootstrap.min.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="styles/caesar.css" />
+        <script type="text/javascript" src="./script/caesar.js"></script>
+
+        <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+    </head>
+    <body>
+        <form runat="server">
+            <div id = "lblEnvironment" visible = "false" runat = "server"></div>
+            <div id = "header" class = "navbar navbar-fixed-top">
+                <div class = "navbar-inner">
+                    <div class = "container">
+                        <a class = "brand" href = "/"><img src = "./Images/dhlogo.png" alt = "" /> Caesar</a>
+                        <div id = "nav" class = "nav-collapse">
+                            <ul class = "nav">
+                                <li><a href = "Servers.aspx">Farm Management</a></li>
+                                <li><a href = "Applications.aspx">Applications</a></li>
+                                <li><a href = "Services.aspx">Services</a></li>
+                                <li><a href = "Tester.aspx">Tester</a></li>
+                            </ul>
+                            <ul id = "admin" class = "nav pull-right">
+                                <li class = "dropdown">
+                                    <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+                                        <asp:Label id = "lblHeaderUserName" runat = "server" /> <b class="caret"></b>
+                                    </a>
+                                    <ul class = "dropdown-menu">
+                                        <li><a href = "#">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "container">
+                <div id = "pieces">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+                </div>
+                <hr/>
+                <footer>
+                    
+                </footer>
+            </div>
+        </form>
+    </body>
+</html>

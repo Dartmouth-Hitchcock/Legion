@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="\\dh5290\d$\publish\development\services\sites\legion" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="development" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/URLRewriter.pdb" publishTime="01/29/2012 21:07:24" />
+    <file relUrl="bin/Centurion.pdb" publishTime="03/08/2013 14:34:02" />
+    <file relUrl="Site.Master" publishTime="08/29/2012 09:40:15" />
+    <file relUrl="bin/Newtonsoft.Json.pdb" publishTime="01/29/2012 21:06:41" />
+    <file relUrl="bin/Mjolnir.dll" publishTime="01/15/2013 09:25:05" />
+    <file relUrl="Images/legion.png" publishTime="03/26/2012 12:49:53" />
+    <file relUrl="bin/URLRewriter.dll" publishTime="01/29/2012 21:07:22" />
+    <file relUrl="bin/Centurion.dll" publishTime="03/08/2013 14:34:02" />
+    <file relUrl="bin/Legion.dll" publishTime="03/08/2013 14:33:27" />
+    <file relUrl="Cache/Dump.aspx" publishTime="08/08/2012 11:07:04" />
+    <file relUrl="api.aspx" publishTime="07/03/2012 15:29:54" />
+    <file relUrl="bin/Newtonsoft.Json.dll" publishTime="01/29/2012 21:06:41" />
+    <file relUrl="bin/Mjolnir.pdb" publishTime="01/16/2013 16:50:05" />
+    <file relUrl="Global.asax" publishTime="01/31/2012 10:35:31" />
+    <file relUrl="Cache/Refresh.aspx" publishTime="08/08/2012 11:07:04" />
+    <file relUrl="bin/Legion.pdb" publishTime="03/08/2013 14:33:26" />
+    <file relUrl="Default.aspx" publishTime="03/26/2012 12:31:13" />
+  </publishProfile>
+  <publishProfile publishUrl="C:\Users\erik j. olson\Desktop\Deploy" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Deploy" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="False">
+    <file relUrl="bin/URLRewriter.pdb" publishTime="01/29/2012 21:07:24" />
+    <file relUrl="bin/Centurion.pdb" publishTime="01/16/2013 22:13:56" />
+    <file relUrl="Site.Master" publishTime="08/29/2012 09:40:15" />
+    <file relUrl="bin/Newtonsoft.Json.pdb" publishTime="01/29/2012 21:06:41" />
+    <file relUrl="bin/Mjolnir.dll" publishTime="01/16/2013 16:50:05" />
+    <file relUrl="Images/legion.png" publishTime="03/26/2012 12:49:53" />
+    <file relUrl="bin/URLRewriter.dll" publishTime="01/29/2012 21:07:22" />
+    <file relUrl="bin/Centurion.dll" publishTime="01/16/2013 22:13:56" />
+    <file relUrl="bin/Legion.dll" publishTime="01/16/2013 22:11:44" />
+    <file relUrl="Cache/Dump.aspx" publishTime="08/08/2012 11:07:04" />
+    <file relUrl="api.aspx" publishTime="07/03/2012 15:29:54" />
+    <file relUrl="bin/Newtonsoft.Json.dll" publishTime="01/29/2012 21:06:41" />
+    <file relUrl="bin/Mjolnir.pdb" publishTime="01/16/2013 16:50:05" />
+    <file relUrl="Global.asax" publishTime="01/31/2012 10:35:31" />
+    <file relUrl="Cache/Refresh.aspx" publishTime="08/08/2012 11:07:04" />
+    <file relUrl="bin/Legion.pdb" publishTime="01/16/2013 22:11:44" />
+    <file relUrl="Default.aspx" publishTime="03/26/2012 12:31:13" />
+  </publishProfile>
+  <publishProfile publishUrl="\\dh5290\d$\publish\staging\services\sites\legion" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="staging" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="False">
+    <file relUrl="bin/URLRewriter.pdb" publishTime="01/29/2012 21:07:24" />
+    <file relUrl="bin/Centurion.pdb" publishTime="02/05/2013 17:08:05" />
+    <file relUrl="Site.Master" publishTime="08/29/2012 09:40:15" />
+    <file relUrl="bin/Newtonsoft.Json.pdb" publishTime="01/29/2012 21:06:41" />
+    <file relUrl="bin/Mjolnir.dll" publishTime="01/15/2013 09:25:05" />
+    <file relUrl="Images/legion.png" publishTime="03/26/2012 12:49:53" />
+    <file relUrl="bin/URLRewriter.dll" publishTime="01/29/2012 21:07:22" />
+    <file relUrl="bin/Centurion.dll" publishTime="02/05/2013 17:08:05" />
+    <file relUrl="bin/Legion.dll" publishTime="02/05/2013 16:33:55" />
+    <file relUrl="Cache/Dump.aspx" publishTime="08/08/2012 11:07:04" />
+    <file relUrl="api.aspx" publishTime="07/03/2012 15:29:54" />
+    <file relUrl="bin/Newtonsoft.Json.dll" publishTime="01/29/2012 21:06:41" />
+    <file relUrl="bin/Mjolnir.pdb" publishTime="01/16/2013 16:50:05" />
+    <file relUrl="Global.asax" publishTime="01/31/2012 10:35:31" />
+    <file relUrl="Cache/Refresh.aspx" publishTime="08/08/2012 11:07:04" />
+    <file relUrl="bin/Legion.pdb" publishTime="02/05/2013 16:33:55" />
+    <file relUrl="Default.aspx" publishTime="03/26/2012 12:31:13" />
+  </publishProfile>
+</publishData>
