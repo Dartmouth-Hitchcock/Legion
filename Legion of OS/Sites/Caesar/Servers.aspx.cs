@@ -29,7 +29,7 @@ namespace Caesar {
     public partial class Servers : System.Web.UI.Page {
 
         internal static void GetServerCache(XmlDocument dom) {
-            Uri uri = new Uri(string.Format("http://{0}.hitchcock.org:51984/legion/Cache/Dump.aspx", HttpContext.Current.Request.Params["server"]));
+            Uri uri = new Uri(string.Format("http://reference.legion.local/Cache/Dump.aspx", HttpContext.Current.Request.Params["server"]));
 
             WebClient client = new WebClient();
             string reply = client.DownloadString(uri);
@@ -39,7 +39,7 @@ namespace Caesar {
         }
 
         internal static void RefreshServerCache(XmlDocument dom) {
-            Uri uri = new Uri(string.Format("http://{0}.hitchcock.org:51984/legion/Cache/Refresh.aspx", HttpContext.Current.Request.Params["server"]));
+            Uri uri = new Uri(string.Format("http://reference.legion.local/Cache/Refresh.aspx", HttpContext.Current.Request.Params["server"]));
 
             WebClient client = new WebClient();
             string reply = client.DownloadString(uri);

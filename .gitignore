@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Legion of OS/.vs
+/Legion of OS/*/bin
+/Legion of OS/*/*/bin
+/Legion of OS/*/obj
+/Legion of OS/*/*/obj
+/Legion of OS/*/*/*/PublishProfiles
+/Legion of OS/Vendor
+/Legion of OS/*/*/Web.config
