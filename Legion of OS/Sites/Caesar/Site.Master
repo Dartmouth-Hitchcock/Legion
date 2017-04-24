@@ -4,13 +4,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
     <head runat="server">
         <title>Legion Service Manager</title>
-        <script type="text/javascript" src="vendor/scripts/js/jquery/library/1.7.0/jquery.min.js"></script>
-        <script type="text/javascript" src="vendor/scripts/js/jquery/plugins/blockui/2.39/jquery.blockUI.js"></script>
-        <script type="text/javascript" src="vendor/scripts/js/jquery/plugins/validate/1.8.1/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="/global/scripts/js/jquery/library/1.7.0/jquery.min.js"></script>
+        <script type="text/javascript" src="/global/scripts/js/jquery/plugins/blockui/2.39/jquery.blockUI.js"></script>
+        <script type="text/javascript" src="/global/scripts/js/jquery/plugins/validate/1.8.1/jquery.validate.min.js"></script>
 
-        <link rel="stylesheet" href="vendor/frameworks/bootstrap/2.1.1/css/bootstrap-noicons.min.css"></link>
-        <link rel="stylesheet" href="vendor/frameworks/fontawesome/2.0/css/font-awesome.css"></link>
-        <script type="text/javascript" src="vendor/frameworks/bootstrap/2.1.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/global/frameworks/bootstrap/2.1.1/css/bootstrap-noicons.min.css"></link>
+        <link rel="stylesheet" href="/global/frameworks/fontawesome/2.0/css/font-awesome.css"></link>
+        <script type="text/javascript" src="/global/frameworks/bootstrap/2.1.1/js/bootstrap.min.js"></script>
 
         <link type="text/css" rel="stylesheet" href="styles/caesar.css" />
         <script type="text/javascript" src="./script/caesar.js"></script>

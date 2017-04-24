@@ -1,5 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Legion" Class="LegionLinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=acheron;Initial Catalog=Legion;Integrated Security=True" SettingsObjectName="Caesar.Properties.Settings" SettingsPropertyName="LegionConnectionString1" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dev-Legion" Class="LegionLinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=dh1404\web_dev;Initial Catalog=dev-Legion;Integrated Security=True" SettingsObjectName="Caesar.Properties.Settings" SettingsPropertyName="dev_LegionConnectionString1" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.xspUpdateServiceSetting" Method="xspUpdateServiceSetting">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="serviceid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="value" Type="System.String" DbType="VarChar(8000)" />
+    <Parameter Name="tfEncrypted" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="resultcode" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.xspDeleteService" Method="xspDeleteService">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
     <Parameter Name="resultcode" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
@@ -15,6 +24,17 @@
     <Parameter Name="serviceid" Type="System.Int32" DbType="Int" />
     <Parameter Name="resultcode" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xspGetServiceSettings" Method="xspGetServiceSettings">
+    <Parameter Name="servicekey" Type="System.String" DbType="Char(36)" />
+    <Parameter Name="serviceid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="resultcode" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <ElementType Name="xspGetServiceSettingsResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(8000) NOT NULL" CanBeNull="false" />
+      <Column Name="IsEncrypted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
   <Function Name="dbo.xspSetSettingById" Method="xspSetSettingById">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
@@ -221,27 +241,5 @@
     <Parameter Name="logged" Type="System.Boolean" DbType="Bit" />
     <Parameter Name="resultcode" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.xspUpdateServiceSetting" Method="xspUpdateServiceSetting">
-    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="serviceid" Type="System.Int32" DbType="Int" />
-    <Parameter Name="name" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="iv" Type="System.String" DbType="VarChar(64)" />
-    <Parameter Name="value" Type="System.String" DbType="VarChar(8000)" />
-    <Parameter Name="tfEncrypted" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="resultcode" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.xspGetServiceSettings" Method="xspGetServiceSettings">
-    <Parameter Name="servicekey" Type="System.String" DbType="Char(36)" />
-    <Parameter Name="serviceid" Type="System.Int32" DbType="Int" />
-    <Parameter Name="resultcode" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
-    <ElementType Name="xspGetServiceSettingsResult">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="IV" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
-      <Column Name="Value" Type="System.String" DbType="VarChar(8000) NOT NULL" CanBeNull="false" />
-      <Column Name="IsEncrypted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-    </ElementType>
   </Function>
 </Database>

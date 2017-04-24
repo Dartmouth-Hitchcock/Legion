@@ -22,9 +22,8 @@ using System.Text;
 using System.Xml;
 
 using Legion.Core.Services;
-//using Mjolnir.Encryption;
-using Legion.Core.Extensions;
-using Legion.Core.Modules;
+using Mjolnir.Encryption;
+using Mjolnir.Extensions;
 
 namespace Caesar {
     public class Methods {
@@ -435,8 +434,14 @@ namespace Caesar {
             string resultcode = null;
             XmlElement element, parent;
 
+            SimpleAES aes;
+            string aesKey = null, aesVector = null;
+
             if (request.ParameterSet["id"] != null && Int32.TryParse(request.ParameterSet["id"], out serviceid)) {
                 using (LegionLinqDataContext db = new LegionLinqDataContext(request.Service.Settings["LegionConnectionString"])) {
+                    db.xspGetSettingByKey("AesKey", ref aesKey);
+                    db.xspGetSettingByKey("AesVector", ref aesVector);
+
                     ISingleResult<xspGetServiceSettingsResult> settings = db.xspGetServiceSettings(null, serviceid, ref resultcode);
 
                     parent = result.AddElement("settings");
@@ -446,12 +451,8 @@ namespace Caesar {
                         result.AddElement(element, "name", s.Name);
 
                         if (s.IsEncrypted) {
-                            Encryption.Packet packet = Encryption.Module.DecryptString(new Encryption.Packet() {
-                                IV = s.IV,
-                                CipherText = s.Value,
-                            });
-
-                            result.AddElement(element, "value", packet.ClearText);
+                            aes = new SimpleAES(aesKey, string.Format("{0}//{1}//{2}", s.Id, aesVector, s.Name));
+                            result.AddElement(element, "value", aes.DecryptString(s.Value));
                             result.AddElement(element, "encrypted", "true");
                         }
                         else {
@@ -476,31 +477,33 @@ namespace Caesar {
 
             using (LegionLinqDataContext db = new LegionLinqDataContext(request.Service.Settings["LegionConnectionString"])) {
                 if (id == -1) {
+                    db.xspUpdateServiceSetting(ref id, serviceid, name, value, encrypted, ref resultcode);
+
                     if (encrypted == true) {
-                        Encryption.Packet packet = Encryption.Module.EncryptString(new Encryption.Packet() {
-                            ClearText = value
-                        });
+                        string aesKey = null, aesVector = null;
+                        db.xspGetSettingByKey("AesKey", ref aesKey);
+                        db.xspGetSettingByKey("AesVector", ref aesVector);
 
-                        db.xspUpdateServiceSetting(ref id, serviceid, name, packet.IV, packet.CipherText, encrypted, ref resultcode);
-                    }
-                    else {
-                        db.xspUpdateServiceSetting(ref id, serviceid, name, null, value, encrypted, ref resultcode);
+                        SimpleAES aes = new SimpleAES(aesKey, string.Format("{0}//{1}//{2}", id, aesVector, name));
 
+                        value = aes.EncryptToString(value);
+                        db.xspUpdateServiceSetting(ref id, serviceid, name, value, encrypted, ref resultcode);
                     }
 
                     result.AddElement("id",  id.ToString());
                 }
                 else {
                     if (encrypted == true) {
-                        Encryption.Packet packet = Encryption.Module.EncryptString(new Encryption.Packet() {
-                            ClearText = value
-                        });
+                        string aesKey = null, aesVector = null;
+                        db.xspGetSettingByKey("AesKey", ref aesKey);
+                        db.xspGetSettingByKey("AesVector", ref aesVector);
 
-                        db.xspUpdateServiceSetting(ref id, serviceid, name, packet.IV, packet.CipherText, encrypted, ref resultcode);
+                        SimpleAES aes = new SimpleAES(aesKey, string.Format("{0}//{1}//{2}", id, aesVector, name));
+
+                        value = aes.EncryptToString(value);
                     }
-                    else {
-                        db.xspUpdateServiceSetting(ref id, serviceid, name, null, value, encrypted, ref resultcode);
-                    }
+
+                    db.xspUpdateServiceSetting(ref id, serviceid, name, value, encrypted, ref resultcode);
                 }
 
                 result.AddElement("resultcode",  resultcode);

@@ -32,7 +32,7 @@ namespace Caesar.Legion {
     /// Abstract class for calling methods in a Legion Service
     /// </summary>
     abstract public class LegionService {
-        private const string LEGION_URL = "http://reference.legion.local";
+        private const string LEGION_URL = "https://webservices.hitchcock.org/legion";
         private const string USER_IP_KEY = "__legion_userip";
         private const string AUTH_TOKEN_KEY = "__legion_authtoken";
 

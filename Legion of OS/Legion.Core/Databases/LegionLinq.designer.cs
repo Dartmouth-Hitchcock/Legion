@@ -32,6 +32,12 @@ namespace Legion.Core.Databases
     partial void OnCreated();
     #endregion
 		
+		public LegionLinqDataContext() : 
+				base(global::Legion.Core.Properties.Settings.Default.LegionConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
+		
 		public LegionLinqDataContext(string connection) : 
 				base(connection, mappingSource)
 		{

@@ -86,12 +86,6 @@
     <Content Include="Services.aspx" />
     <Content Include="Styles\caesar.css" />
     <Content Include="Tester.aspx" />
-    <Content Include="vendor\frameworks\bootstrap\2.1.1\css\bootstrap-noicons.min.css" />
-    <Content Include="vendor\frameworks\bootstrap\2.1.1\js\bootstrap.min.js" />
-    <Content Include="vendor\frameworks\fontawesome\2.0\css\font-awesome.css" />
-    <Content Include="vendor\scripts\js\jquery\library\1.7.0\jquery.min.js" />
-    <Content Include="vendor\scripts\js\jquery\plugins\validate\1.8.1\jquery.validate.min.js" />
-    <Content Include="vendor\scripts\js\jquery\plugins\blockui\2.39\jquery.blockUI.js" />
     <Content Include="xsl\prettyxml.xslt" />
   </ItemGroup>
   <ItemGroup>
@@ -177,9 +171,14 @@
     </None>
     <None Include="Properties\PublishProfiles\deploy.pubxml" />
     <None Include="Properties\PublishProfiles\development.pubxml" />
-    <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Properties\PublishProfiles\staging.pubxml" />
-    <Content Include="Web.config.default" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />
@@ -198,7 +197,6 @@
       <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

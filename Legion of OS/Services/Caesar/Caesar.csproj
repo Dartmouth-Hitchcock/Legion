@@ -82,9 +82,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="app.config" />
     <None Include="LegionLinq.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>LegionLinq.designer.cs</LastGenOutput>
@@ -111,8 +109,11 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>if $(ConfigurationName) == Debug (
+xcopy /r /y /z "$(TargetDir)$(TargetFileName)" \\dh5290\d$\publish\development\services\assemblies
+xcopy /r /y /z "$(TargetDir)$(TargetName).pdb" \\dh5290\d$\publish\development\services\assemblies
+)
+)</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
